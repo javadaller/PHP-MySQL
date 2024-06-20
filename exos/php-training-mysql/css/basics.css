@@ -3,3 +3,9 @@ label, select, input{
   display: inline-block;
   margin: 5px 0;
 }
+
+#logout {
+  position: absolute;
+  top:3%;
+  right:3%;
+}
