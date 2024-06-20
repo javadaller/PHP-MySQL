@@ -3,17 +3,15 @@ require 'auth.php';
 require 'config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupérer et nettoyer les données du formulaire
     $name = htmlspecialchars($_POST['name']);
     $difficulty = htmlspecialchars($_POST['difficulty']);
     $distance = htmlspecialchars($_POST['distance']);
     $duration = htmlspecialchars($_POST['duration']);
     $height_difference = htmlspecialchars($_POST['height_difference']);
-    $available = isset($_POST['available']) ? 1 : 0; // Récupérer la valeur de available, par défaut 0
+    $available = isset($_POST['available']) ? 1 : 0;
 
     $errors = [];
 
-    // Vérifier que les champs obligatoires ne sont pas vides
     if (empty($name)) {
         $errors[] = "Le champ 'Nom' est requis.";
     }
